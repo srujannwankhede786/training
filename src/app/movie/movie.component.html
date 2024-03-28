@@ -1,0 +1,40 @@
+<p>movie works!</p>
+
+<button (click)="toggleImage()"> Show Movie </button>
+
+<!-- <div *ngIf="displayPic">
+    <img  [src] = "movie.movieImg" 
+    [style.height.px]= "height"
+    [style.width.px]= "width"
+    [style.borderRadius.px]= "borderRadius">
+</div> -->
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Movie</th>
+            <th>Actor</th>
+            <th>Genre</th>
+            <th>Rating</th>
+            <th>Show Movie</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let movie of movies">
+            <td>
+                <img *ngIf="this.displayPic" [src]="movie.movieImg" 
+                     [style.height.px]="height"
+                     [style.width.px]="width"
+                     [style.borderRadius.px]="borderRadius">
+            </td>
+            <td>{{ movie.movieName }}</td>
+            <td>{{ movie.movieStar }}</td>
+            <td>{{ movie.movieGenre }}</td>
+            <td>{{ movie.movieRating }}</td>
+            <!-- <td><button (click)="toggleImage()">Show Movie</button></td> -->
+        </tr>
+    </tbody>
+</table>
+
+
